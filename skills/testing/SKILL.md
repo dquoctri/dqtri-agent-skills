@@ -1,0 +1,37 @@
+---
+name: testing
+description: Add, repair, design, or review tests and coverage for behavior changes, bug fixes, edge cases, and verification strategy.
+---
+
+# Skill: testing
+
+## When to use
+
+Use for adding tests, repairing tests, improving coverage, or designing a focused test strategy.
+
+## Inputs to check
+
+- Behavior, contract, or risk being tested.
+- Existing test framework, naming style, fixtures, and helpers.
+- Relevant commands for unit, integration, or end-to-end tests.
+
+## Steps
+
+1. Define the behavior under test.
+2. For bug fixes, write or identify a reproduction test before changing code when practical.
+3. Use the project's existing test style and helpers.
+4. Write focused setup and assertions.
+5. Cover important edge cases and failure paths.
+6. Run the relevant test command and fix test issues.
+
+## Review checklist
+
+- Tests assert behavior, not incidental implementation.
+- Tests are deterministic and isolated.
+- Test doubles are as real as practical: prefer real implementations, then fakes, then stubs, then mocks.
+- New coverage matches the risk being addressed.
+- Failure messages would help diagnose regressions.
+
+## Memory update guidance
+
+Update memory only for durable test commands, fixture conventions, or known testing constraints. Do not store transient failures or raw test output.

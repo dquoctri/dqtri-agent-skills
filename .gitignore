@@ -1,0 +1,8 @@
+# Upstream reference material.
+# These folders are read-only inputs for improving Hermes-lite skills, not
+# source files owned by this project.
+/upstream/*
+!/upstream/README.md
+
+# Local project memory can contain project-specific notes.
+/ai-memory/
