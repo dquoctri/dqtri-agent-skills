@@ -189,6 +189,7 @@ Do not store:
 - Raw command output.
 - Secrets or credentials.
 - Chat transcripts.
+- Content inside `<private>...</private>` tags.
 - Project-specific context in shared skills.
 
 ## Skill Improvement Rules

@@ -20,7 +20,7 @@ mkdir -p "$memory_dir"
 
 create_file "$memory_dir/project-profile.md" '# Project Profile
 
-Durable project facts for agents. Keep this current when setup or conventions change.
+Durable project facts for agents. Keep this current when setup or conventions change. Do not store content marked with <private> tags.
 
 ## Stack
 

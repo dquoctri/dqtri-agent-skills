@@ -57,6 +57,11 @@ update_git_repo \
   "$agent_skills_dir/awesome-codex-skills"
 
 update_git_repo \
+  "claude-mem" \
+  "https://github.com/thedotmack/claude-mem.git" \
+  "$agent_skills_dir/claude-mem"
+
+update_git_repo \
   "vercel-labs-agent-skills" \
   "https://github.com/vercel-labs/agent-skills.git" \
   "$agent_skills_dir/vercel-labs"

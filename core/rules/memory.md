@@ -24,6 +24,7 @@ dqtri-agent-skills memory is for durable project knowledge. It is optional and m
 - Raw command output that is only useful for the current session.
 - Stack traces, build logs, or test output unless summarized as a durable known issue.
 - Secrets, tokens, credentials, private keys, or personal data.
+- Content inside `<private>...</private>` tags.
 - General programming advice that belongs in rules or skills.
 - Chat transcripts or transient reasoning.
 

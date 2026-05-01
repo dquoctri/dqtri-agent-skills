@@ -61,7 +61,7 @@ Read project memory from:
 ./ai-memory/
 ```
 
-Update `./ai-memory/` only when information is durable and likely to help future sessions. Do not store temporary debugging logs, raw command output, secrets, or chat transcripts.
+Update `./ai-memory/` only when information is durable and likely to help future sessions. Do not store temporary debugging logs, raw command output, secrets, chat transcripts, or content inside `<private>...</private>` tags.
 
 ## Execution Loop
 

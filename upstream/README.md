@@ -13,6 +13,7 @@ upstream/
 |   |-- addyosmani/
 |   |-- andrej-karpathy/
 |   |-- awesome-codex-skills/
+|   |-- claude-mem/
 |   `-- vercel-labs/
 `-- design/
     `-- getdesign.md/
@@ -82,6 +83,7 @@ Specify brands explicitly:
 - `upstream/agent-skills/addyosmani`
 - `upstream/agent-skills/andrej-karpathy`
 - `upstream/agent-skills/awesome-codex-skills`
+- `upstream/agent-skills/claude-mem`
 - `upstream/agent-skills/vercel-labs`
 - `upstream/design/getdesign.md/<brand>/DESIGN.md`
 
