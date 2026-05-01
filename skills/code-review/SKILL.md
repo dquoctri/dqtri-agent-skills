@@ -36,3 +36,11 @@ Use when asked to review, audit, or assess code changes before or after implemen
 ## Memory update guidance
 
 Update memory only for durable review standards or recurring project risks. Do not promote one review's context into global guidance.
+
+## Done When
+
+- Findings are ordered by severity and tied to concrete files or behavior.
+- Verification evidence and missing checks are stated.
+- Scope, unrelated changes, and residual risk were considered.
+- Durable learning was recorded only if useful.
+- Any skill improvement was proposed, not auto-applied.

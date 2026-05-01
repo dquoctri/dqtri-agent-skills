@@ -33,3 +33,11 @@ Use for breaking a spec, bug, migration, or multi-file change into executable st
 ## Memory update guidance
 
 Update memory only for durable project workflow constraints or recurring planning patterns. Do not store temporary task lists.
+
+## Done When
+
+- The plan is split into thin, bounded steps.
+- Each step has input, action, output, verification, and stop point.
+- Risky or irreversible work has a rollback or review point.
+- Durable learning was recorded only if useful.
+- Any skill improvement was proposed, not auto-applied.

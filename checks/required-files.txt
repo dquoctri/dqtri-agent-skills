@@ -1,0 +1,10 @@
+AGENTS.md
+ai-memory/
+ai-memory/facts.md
+ai-memory/decisions.md
+ai-memory/patterns.md
+ai-memory/mistakes.md
+ai-memory/project-config.md
+ai-memory/project-experience-log.md
+ai-memory/skill-improvement-proposals.md
+

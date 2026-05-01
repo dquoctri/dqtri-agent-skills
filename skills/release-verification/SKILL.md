@@ -33,3 +33,11 @@ Use after implementation, review, test, deployment, or migration to confirm the 
 ## Memory update guidance
 
 Update memory for durable verification commands, recurring smoke tests, or known release checks. Do not store raw logs unless summarized as a lasting issue.
+
+## Done When
+
+- Acceptance criteria map to completed checks or explicit gaps.
+- Verification results, failures, and residual risks are clear.
+- Diff scope or release scope was reviewed.
+- Durable learning was recorded only if useful.
+- Any skill improvement was proposed, not auto-applied.

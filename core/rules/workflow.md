@@ -7,11 +7,12 @@ Use the dqtri-agent-skills execution loop for software development lifecycle tas
 1. Read the project `AGENTS.md`.
 2. Read relevant shared rules from `~/dqtri-agent-skills/core/rules/`.
 3. Read project memory if the project has it or points to it.
-4. Select 1-2 relevant skills from `~/dqtri-agent-skills/skills/`.
-5. Define success criteria and plan the next coherent change.
-6. Implement one step.
-7. Review the change and run relevant verification.
-8. Update memory only if useful and allowed.
+4. Read `./ai-memory/project-config.md` when it exists.
+5. Select 1-2 relevant skills from `~/dqtri-agent-skills/skills/`.
+6. Define success criteria and plan the next coherent change.
+7. Implement one bounded step.
+8. Review the diff and run relevant verification.
+9. Update memory only if useful and allowed.
 
 ## Rule Loading
 
@@ -47,12 +48,22 @@ Use the dqtri-agent-skills execution loop for software development lifecycle tas
 
 - Transform broad requests into verifiable goals: validation gets invalid-input tests, bug fixes get reproduction checks, refactors get before/after verification.
 - For multi-step tasks, plan each step with its verification check.
+- Bound each step with clear input, allowed action, output, verification, and stop point.
 - Make one coherent change at a time.
 - Prefer narrow edits that can be reviewed and verified.
 - For larger work, use thin slices that leave the project buildable and testable after each step.
 - Stop adding new changes when tests, builds, or runtime checks fail unexpectedly; diagnose before continuing.
 - Run the smallest meaningful verification after each substantial change.
 - Expand verification when shared code, public contracts, data migrations, or user-facing behavior are affected.
+
+## Before Commit
+
+- Run the declared test command when it exists and is relevant.
+- Run lint, typecheck, build, or smoke commands when declared and relevant.
+- Inspect the diff before proposing or creating a commit.
+- Confirm no unrelated files changed.
+- Confirm protected files, generated files, lockfiles, and secrets were not changed unexpectedly.
+- If verification fails or cannot run, report that instead of proposing a commit.
 
 ## Review
 
@@ -66,3 +77,5 @@ Use the dqtri-agent-skills execution loop for software development lifecycle tas
 - Update memory only when the result is durable project knowledge.
 - Do not write temporary notes, debugging traces, or chat history into memory.
 - Do not update shared skills or rules during normal project work.
+- Record raw task observations in `project-experience-log.md` only when they are useful.
+- Record reusable process ideas in `skill-improvement-proposals.md`; do not promote them automatically.

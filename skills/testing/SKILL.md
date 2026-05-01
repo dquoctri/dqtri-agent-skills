@@ -35,3 +35,11 @@ Use for adding tests, repairing tests, improving coverage, or designing a focuse
 ## Memory update guidance
 
 Update memory only for durable test commands, fixture conventions, or known testing constraints. Do not store transient failures or raw test output.
+
+## Done When
+
+- Tests cover the behavior or risk being addressed.
+- Relevant test command passed or the blocker is stated.
+- Diff was reviewed for brittle or unrelated test changes.
+- Durable learning was recorded only if useful.
+- Any skill improvement was proposed, not auto-applied.

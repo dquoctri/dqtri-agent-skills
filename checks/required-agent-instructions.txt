@@ -1,0 +1,8 @@
+dqtri-agent-skills
+ai-memory
+load only relevant rules
+at most 1-2 skills
+verification
+unsafe
+commit
+

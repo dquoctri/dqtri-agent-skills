@@ -32,4 +32,12 @@ Use for turning an idea, requirement, bug report, or product request into a clea
 
 ## Memory update guidance
 
-Update memory only for durable product decisions, accepted constraints, or lasting domain concepts. Put reusable process improvements in `skill-improvements.md`.
+Update memory only for durable product decisions, accepted constraints, or lasting domain concepts. Put reusable process improvements in `skill-improvement-proposals.md`.
+
+## Done When
+
+- The smallest useful spec is clear enough to implement.
+- Acceptance criteria and non-goals are testable.
+- Relevant verification approach is named.
+- Durable learning was recorded only if useful.
+- Any skill improvement was proposed, not auto-applied.

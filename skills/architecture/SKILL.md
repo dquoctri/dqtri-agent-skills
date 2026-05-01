@@ -35,3 +35,11 @@ Use for system design, module boundaries, dependency direction, data flow, servi
 ## Memory update guidance
 
 Update memory for durable architecture decisions, accepted tradeoffs, or lasting boundaries. Do not store speculative designs that were not adopted.
+
+## Done When
+
+- The smallest fitting architectural decision or change is explicit.
+- Tradeoffs, migration needs, verification, and rollback are named when relevant.
+- Diff or recommendation was reviewed for scope and dependency direction.
+- Durable learning was recorded only if useful.
+- Any skill improvement was proposed, not auto-applied.

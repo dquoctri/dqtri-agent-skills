@@ -18,6 +18,49 @@ create_file() {
 
 mkdir -p "$memory_dir"
 
+create_file "$memory_dir/facts.md" '# Project Facts
+
+Durable project facts for agents. Keep this current when setup, commands, architecture, or conventions change. Do not store content marked with <private> tags.
+
+## Stack
+
+- Languages:
+- Frameworks:
+- Runtime:
+- Database:
+- External services:
+
+## Package Manager
+
+- Package manager:
+- Install command:
+
+## Commands
+
+- Test command:
+- Build command:
+- Lint command:
+- Format command:
+- Deploy command:
+- Smoke/verify command:
+
+## Architecture
+
+- Application shape:
+- Main entry points:
+- Important modules:
+- Data flow:
+- Deployment/runtime notes:
+
+## Important Conventions
+
+- Code style:
+- Naming:
+- Error handling:
+- Testing:
+- Configuration:
+- Generated files:'
+
 create_file "$memory_dir/project-profile.md" '# Project Profile
 
 Durable project facts for agents. Keep this current when setup or conventions change. Do not store content marked with <private> tags.
@@ -127,11 +170,103 @@ Durable lessons from previous work. Do not store temporary debugging logs or raw
 - Keep entries factual and actionable.
 - Remove stale entries when they no longer apply.'
 
+create_file "$memory_dir/project-config.md" '# Project Config
+
+Project-local commands and boundaries for coding agents. Keep this file current when commands, protected paths, or workflow rules change.
+
+## Verification Commands
+
+- Test:
+- Typecheck:
+- Lint:
+- Build:
+- Format:
+- Smoke/verify:
+
+## Important Paths
+
+- Source:
+- Tests:
+- Docs:
+- Config:
+- Generated:
+
+## Protected Paths
+
+- .env
+- .env.*
+- production.yml
+- secrets/
+
+## Commit Rule
+
+Do not commit unless relevant verification commands pass, the diff was reviewed, and unrelated files were not changed.'
+
+create_file "$memory_dir/project-experience-log.md" '# Project Experience Log
+
+Raw observations from real agent work. Use this to capture experience before turning it into reusable skill proposals.
+
+## YYYY-MM-DD - Task Title
+
+Task:
+- TODO
+
+What worked:
+- TODO
+
+What failed:
+- TODO
+
+Suggested improvement:
+- TODO
+
+## Rules
+
+- Keep observations concise and factual.
+- Do not store secrets, raw logs, chat transcripts, or content inside <private> tags.
+- Promote repeated lessons to skill-improvement-proposals.md only after review.'
+
+create_file "$memory_dir/skill-improvement-proposals.md" '# Skill Improvement Proposals
+
+Reviewed candidate improvements for shared coding-agent skills.
+
+These are proposals only. They are not automatically promoted to shared skills.
+
+## Proposal: Improvement Title
+
+Date:
+- YYYY-MM-DD
+
+Observed in project:
+- TODO
+
+Suggested skill:
+- TODO
+
+Suggested rule:
+- TODO
+
+Promotion checklist:
+- Happened more than once:
+- Helps multiple projects:
+- Rule is simple:
+- Reduces mistakes without too much context:
+- Can be verified:
+
+Status:
+- proposed
+
+## Rules
+
+- Add only reusable improvements, not project-specific context.
+- Do not edit shared skills from here automatically.
+- Promote changes to shared skills only when explicitly requested.'
+
 create_file "$memory_dir/skill-improvements.md" '# Skill Improvements
 
 Proposed reusable improvements for shared coding-agent skills.
 
-These are proposals only. They are not automatically promoted to shared skills.
+Compatibility file for older projects. Prefer skill-improvement-proposals.md for new entries.
 
 ## Proposed Improvements
 

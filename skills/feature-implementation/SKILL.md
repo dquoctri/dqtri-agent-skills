@@ -35,3 +35,11 @@ Use when implementing new behavior, UI, API endpoints, commands, integrations, o
 ## Memory update guidance
 
 Update memory only for durable feature decisions, new commands, or long-lived constraints. Do not store task notes or temporary implementation details.
+
+## Done When
+
+- The smallest safe behavior change was made.
+- Relevant tests, lint, typecheck, build, or smoke checks passed or gaps are stated.
+- Diff was reviewed for unrelated changes.
+- Durable learning was recorded only if useful.
+- Any skill improvement was proposed, not auto-applied.

@@ -67,6 +67,8 @@ if [ -d "$home_root" ]; then
   check_dir core/templates
   check_dir skills
   check_dir scripts
+  check_dir checks
+  check_dir schemas
   check_dir memory
   check_dir memory/projects
 
@@ -74,6 +76,10 @@ if [ -d "$home_root" ]; then
   check_file core/rules/workflow.md
   check_file core/rules/memory.md
   check_file core/rules/safety.md
+  check_file core/rules/verification.md
+  check_file core/templates/AGENTS.md
+  check_file core/templates/CLAUDE.md
+  check_file core/templates/project-config.md
 
   check_file skills/debugging/SKILL.md
   check_file skills/refactor/SKILL.md
@@ -92,6 +98,16 @@ if [ -d "$home_root" ]; then
   check_file scripts/new-project-memory.sh
   check_file scripts/doctor.sh
   check_file scripts/update-upstream.sh
+  check_file scripts/verify-project-integration.sh
+  check_file scripts/check-diff-scope.sh
+  check_file scripts/check-memory-hygiene.sh
+  check_file scripts/collect-project-lessons.sh
+  check_file scripts/propose-skill-update.sh
+  check_file checks/required-files.txt
+  check_file checks/required-agent-instructions.txt
+  check_file schemas/project-config.schema.md
+  check_file schemas/memory.schema.md
+  check_file schemas/skill-proposal.schema.md
   check_file upstream/README.md
 fi
 

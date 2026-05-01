@@ -1,5 +1,5 @@
 # Upstream reference material.
-# These folders are read-only inputs for improving Hermes-lite skills, not
+# These folders are read-only inputs for improving dqtri-agent-skills, not
 # source files owned by this project.
 /upstream/*
 !/upstream/README.md

@@ -33,3 +33,11 @@ Use for security-focused design review, code review, threat analysis, or hardeni
 ## Memory update guidance
 
 Update memory only for durable security constraints or approved hardening decisions. Do not store secrets, raw vulnerable payloads, or sensitive logs.
+
+## Done When
+
+- Practical risks are severity-labeled and actionable.
+- Verification or mitigation checks are named where relevant.
+- Diff was reviewed for secrets, auth boundaries, and unrelated changes.
+- Durable learning was recorded only if useful.
+- Any skill improvement was proposed, not auto-applied.

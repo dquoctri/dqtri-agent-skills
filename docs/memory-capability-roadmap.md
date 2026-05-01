@@ -8,7 +8,7 @@ These are candidate memory-system capabilities for dqtri-agent-skills. They shou
 
 ### Persistent Memory
 
-Context should survive across sessions through project-local memory files such as `./ai-memory/summary.md`, `decisions.md`, `patterns.md`, `mistakes.md`, and `skill-improvements.md`.
+Context should survive across sessions through project-local memory files such as `./ai-memory/facts.md`, `decisions.md`, `patterns.md`, `mistakes.md`, `project-config.md`, `project-experience-log.md`, and `skill-improvement-proposals.md`.
 
 Current status: partially supported through explicit memory files and memory rules.
 
@@ -66,7 +66,7 @@ Possible controls:
 - Which memory files are read at session start.
 - Maximum memory lines or approximate token budget.
 - Whether shared project memory is allowed.
-- Whether `skill-improvements.md` is read automatically or only on skill-maintenance tasks.
+- Whether `skill-improvement-proposals.md` is read automatically or only on skill-maintenance tasks.
 
 Current status: not implemented.
 

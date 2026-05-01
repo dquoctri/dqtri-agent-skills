@@ -33,3 +33,11 @@ Use for release preparation, deployment planning, migrations, environment change
 ## Memory update guidance
 
 Update memory for durable deployment commands, environments, and rollback conventions. Do not store secrets or one-time release notes.
+
+## Done When
+
+- Release, rollout, monitoring, and rollback steps are explicit.
+- Pre-deploy and post-deploy verification are defined or completed.
+- Diff or config changes were reviewed for protected paths and secrets.
+- Durable learning was recorded only if useful.
+- Any skill improvement was proposed, not auto-applied.

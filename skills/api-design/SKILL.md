@@ -33,3 +33,11 @@ Use for designing or changing APIs, command interfaces, schemas, events, or inte
 ## Memory update guidance
 
 Update memory for durable API conventions, compatibility decisions, or integration constraints. Do not store one-off payload dumps.
+
+## Done When
+
+- Contract, errors, auth, validation, and compatibility expectations are explicit.
+- Relevant contract tests or verification approach are defined.
+- Diff or proposal was reviewed for scope and consumer impact.
+- Durable learning was recorded only if useful.
+- Any skill improvement was proposed, not auto-applied.

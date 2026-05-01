@@ -17,6 +17,8 @@ dqtri-agent-skills memory is for durable project knowledge. It is optional and m
 - Important setup and verification commands.
 - Durable constraints from integrations, environments, data models, or product behavior.
 - Known risks or follow-up items that remain relevant after the current task.
+- Raw but useful project experience in `project-experience-log.md`.
+- Reusable skill improvement candidates in `skill-improvement-proposals.md`.
 
 ## Do Not Store
 
@@ -33,9 +35,18 @@ dqtri-agent-skills memory is for durable project knowledge. It is optional and m
 - Project-specific knowledge belongs in project memory.
 - Reusable coding guidance belongs in shared rules or skills, but must not be promoted automatically.
 - Do not turn one project's context into a shared rule.
-- If a reusable skill improvement seems useful, record it in `skill-improvements.md` first for later review.
+- If a reusable skill improvement seems useful, record it in `skill-improvement-proposals.md` first for later review.
+- `skill-improvements.md` is a compatibility name for older projects.
 - Only modify shared skills or rules when the user explicitly asks to change this skill system itself.
 - For durable technical decisions, record the decision, reason, consequences, and alternatives considered when useful.
+
+## Learning Loop
+
+- One mistake becomes a memory note.
+- Repeated mistakes become skill improvement proposals.
+- Repeated skill gaps become shared skill updates after review.
+- Repeated rule enforcement issues become explicit scripts or checks.
+- Do not turn one project's unusual case into a global rule without evidence.
 
 ## Reading And Writing
 

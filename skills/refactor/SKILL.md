@@ -35,3 +35,11 @@ Use for behavior-preserving restructuring, simplification, extraction, renaming,
 ## Memory update guidance
 
 Update memory only when the refactor establishes a durable project convention or architectural boundary. Do not store local cleanup notes.
+
+## Done When
+
+- The smallest behavior-preserving structural change was made.
+- Relevant verification passed or gaps are stated.
+- Diff was reviewed for scope drift and accidental behavior changes.
+- Durable learning was recorded only if useful.
+- Any skill improvement was proposed, not auto-applied.

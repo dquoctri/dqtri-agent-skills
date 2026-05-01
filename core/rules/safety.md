@@ -7,9 +7,10 @@ These rules protect user code, project context, and the shared dqtri-agent-skill
 - Never auto-modify shared skills, shared rules, templates, scripts, or shared memory.
 - Agents may read files under `~/dqtri-agent-skills`.
 - Agents must not edit shared dqtri-agent-skills files unless the user explicitly asks to change this skill system itself.
-- Skill improvements must be proposed or recorded in `skill-improvements.md` first, not applied directly.
+- Skill improvements must be proposed or recorded in `skill-improvement-proposals.md` first, not applied directly.
 - Do not rely on session-start hooks, hidden registration, background loading, or packaged runtime archives to activate skills.
 - Keep executable helpers explicit, documented, and user-invoked.
+- Keep formatting, dependency updates, memory updates, commits, pushes, and deploys explicit and visible.
 
 ## Project Context
 
@@ -38,3 +39,5 @@ These rules protect user code, project context, and the shared dqtri-agent-skill
 - Prefer project-provided scripts for build, test, lint, and format.
 - Report verification that was run.
 - If verification was skipped or failed for environmental reasons, say so plainly.
+- Run diff-scope checks when the change is broad, risky, or near protected paths.
+- If a validation script reports a failure, explain the failure before continuing.

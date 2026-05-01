@@ -36,3 +36,11 @@ Use for failing tests, runtime errors, regressions, crashes, incorrect outputs, 
 ## Memory update guidance
 
 Update memory only for durable project knowledge, such as a recurring failure mode, non-obvious diagnostic command, or lasting environment constraint. Do not store temporary logs.
+
+## Done When
+
+- Root cause is identified or the remaining uncertainty is explicit.
+- Failing case and relevant regression checks pass or blockers are stated.
+- Diff was reviewed for unrelated changes and symptom-only fixes.
+- Durable learning was recorded only if useful.
+- Any skill improvement was proposed, not auto-applied.

@@ -1,4 +1,4 @@
-# CLAUDE.md
+# AGENTS.md
 
 This project uses dqtri-agent-skills for software development lifecycle work and project-local memory.
 
@@ -36,23 +36,7 @@ Load skills lazily from:
 
 Load at most 1-2 skills per task. Never load all skills.
 
-Skill selection:
-
-- `spec-design`: requirements, acceptance criteria, non-goals, implementation-ready specs.
-- `planning`: thin, verifiable steps for multi-step work.
-- `architecture`: system boundaries, dependency direction, migrations, structural decisions.
-- `api-design`: APIs, schemas, commands, events, integration contracts.
-- `feature-implementation`: new behavior, workflows, APIs, commands, UI changes.
-- `debugging`: failing tests, runtime errors, regressions, crashes, incorrect behavior.
-- `refactor`: behavior-preserving restructuring and cleanup.
-- `testing`: adding, repairing, or improving tests.
-- `code-review`: review, audit, or risk assessment.
-- `security-review`: vulnerabilities, auth, input handling, secrets, threat analysis.
-- `performance-review`: latency, throughput, memory, bundle, rendering, query performance.
-- `deployment`: release prep, environment changes, migrations, rollout, rollback.
-- `release-verification`: post-change, post-review, or post-deploy verification.
-
-Never edit shared skills unless explicitly instructed by the user.
+Never edit shared skills unless explicitly instructed by the user to improve this skill system itself.
 
 ## Project Memory
 
@@ -68,17 +52,17 @@ Read project verification commands and boundaries from:
 ./ai-memory/project-config.md
 ```
 
-Update `./ai-memory/` only when information is durable and likely to help future sessions. Do not store temporary debugging logs, raw command output, secrets, chat transcripts, or content inside `<private>...</private>` tags. Record raw observations in `project-experience-log.md` and reusable skill ideas in `skill-improvement-proposals.md`.
+Update `./ai-memory/` only when information is durable and likely to help future sessions. Do not store temporary debugging logs, raw command output, secrets, chat transcripts, or content inside `<private>...</private>` tags.
 
 ## Execution Loop
 
-1. Read this project `CLAUDE.md`.
+1. Read this project `AGENTS.md`.
 2. Read relevant shared rules from `~/dqtri-agent-skills/core/rules/`.
 3. Read project memory from `./ai-memory/` when it exists.
 4. Read `./ai-memory/project-config.md` when it exists.
 5. Select at most 1-2 relevant skills from `~/dqtri-agent-skills/skills/`.
-6. Define success criteria and plan the next coherent step with input, action, output, verification, and stop point.
-7. Execute one bounded step.
+6. Plan the next coherent change with clear input, action, output, verification, and stop point.
+7. Implement one bounded step.
 8. Review the diff and run relevant verification commands.
 9. Update `./ai-memory/` only when the new information is durable.
 
@@ -88,3 +72,4 @@ Update `./ai-memory/` only when information is durable and likely to help future
 - Before proposing or creating a commit, run declared tests and relevant lint/typecheck/build commands when available.
 - Do not commit if verification fails, unrelated files changed, or protected paths changed unexpectedly.
 - Keep powerful actions explicit: formatting, dependency updates, memory updates, commits, pushes, and deploys should be user-visible commands.
+

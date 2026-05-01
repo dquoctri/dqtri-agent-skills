@@ -33,3 +33,11 @@ Use for performance investigation, optimization planning, or review of changes t
 ## Memory update guidance
 
 Update memory for durable performance budgets, known bottlenecks, or accepted tradeoffs. Do not store bulky benchmark logs.
+
+## Done When
+
+- Performance claim is tied to a metric, budget, or observed bottleneck.
+- Relevant measurement or proxy verification is recorded.
+- Diff was reviewed for correctness, readability, and scope.
+- Durable learning was recorded only if useful.
+- Any skill improvement was proposed, not auto-applied.
