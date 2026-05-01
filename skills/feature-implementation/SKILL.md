@@ -4,6 +4,9 @@ description: Implement new behavior, user workflows, UI changes, API endpoints, 
 tokens: ~500
 tier: critical
 triggers: implement, add feature, build, create, new behavior, workflow, UI, endpoint, command, integration
+chains:
+  before: [planning, spec-design, api-design]
+  after: [testing, code-review]
 ---
 
 # Skill: feature-implementation
@@ -38,6 +41,17 @@ Use when implementing new behavior, UI, API endpoints, commands, integrations, o
 ## Memory update guidance
 
 Update memory only for durable feature decisions, new commands, or long-lived constraints. Do not store task notes or temporary implementation details.
+
+## Quality Gate
+
+Gates: Code, Tests, API (if public contract changed), Security (if auth/input boundary touched)  
+- Lint and typecheck clean, or gap stated.
+- No speculative abstraction — code solves the current request only.
+- Tests cover the new behavior including at least one negative case.
+- If a public API or contract changed: backward-compatible or migration defined.
+- If user input flows to a sensitive operation: validated at the boundary.
+
+See `core/rules/quality-gates.md` → Code, Tests, API, Security dimensions.
 
 ## Done When
 

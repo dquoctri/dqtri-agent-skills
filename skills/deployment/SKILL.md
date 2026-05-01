@@ -4,6 +4,9 @@ description: Prepare releases, deployments, migrations, environment changes, rol
 tokens: ~550
 tier: optional
 triggers: deploy, release, rollout, CI/CD, environment, migration, rollback, publish, ship
+chains:
+  before: [code-review, testing]
+  after: [release-verification]
 ---
 
 # Skill: deployment
@@ -36,6 +39,17 @@ Use for release preparation, deployment planning, migrations, environment change
 ## Memory update guidance
 
 Update memory for durable deployment commands, environments, and rollback conventions. Do not store secrets or one-time release notes.
+
+## Quality Gate
+
+Gates: Deployment, Security  
+- Release steps are explicit and ordered — a second engineer can execute them without asking.
+- Rollback or recovery path is defined before the deploy starts.
+- Secrets referenced by variable name or vault path only — never exposed in config or memory.
+- Migration order is safe: database schema before code, or code tolerates both states.
+- Post-deploy verification steps and success criteria are named.
+
+See `core/rules/quality-gates.md` → Deployment, Security dimensions.
 
 ## Done When
 

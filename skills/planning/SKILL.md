@@ -4,6 +4,9 @@ description: Break specs, bugs, migrations, and multi-file changes into thin, or
 tokens: ~450
 tier: critical
 triggers: plan, steps, sequence, multi-step, break down, order, slice
+chains:
+  before: [spec-design]
+  after: [feature-implementation, architecture]
 ---
 
 # Skill: planning
@@ -36,6 +39,16 @@ Use for breaking a spec, bug, migration, or multi-file change into executable st
 ## Memory update guidance
 
 Update memory only for durable project workflow constraints or recurring planning patterns. Do not store temporary task lists.
+
+## Quality Gate
+
+Gates: Architecture  
+- Each step has a single outcome and a verification method — not "do X and Y".
+- Steps are dependency-safe: no step assumes a prior step that has not been ordered.
+- Risky, irreversible, or high-blast-radius steps are isolated and appear early.
+- No unrelated cleanup, speculative work, or nice-to-haves in the plan.
+
+See `core/rules/quality-gates.md` → Architecture dimension.
 
 ## Done When
 

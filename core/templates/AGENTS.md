@@ -20,11 +20,15 @@ Read relevant shared rules from:
 
 Use these rule files as needed:
 
-- `coding.md`
-- `workflow.md`
-- `memory.md`
-- `safety.md`
-- `verification.md`
+- `harness.md` — execution wrapper: pre-task gate, during-task guardrails, post-task quality gate
+- `quality-gates.md` — per-dimension quality standards (Code, Tests, Architecture, API, Security, Performance, Deployment)
+- `coding.md` — four core coding principles
+- `workflow.md` — execution loop and progressive memory loading
+- `memory.md` — write triggers, session close, memory layers
+- `safety.md` — shared skill protection and project context boundaries
+- `verification.md` — deterministic step boundaries and commit rules
+
+Load `harness.md` on every task. Load other rules only when relevant.
 
 ## Skills
 
@@ -36,21 +40,15 @@ Load skills lazily from:
 
 Load at most 1-2 skills per task. Never load all skills.
 
-Available skills:
+**Role profile** (recommended): load `~/dqtri-agent-skills/skills/profiles/<role>.md` for the session role. The profile pre-selects skills, memory layers, and context budget.
 
-- `spec-design`
-- `planning`
-- `architecture`
-- `api-design`
-- `feature-implementation`
-- `debugging`
-- `refactor`
-- `testing`
-- `code-review`
-- `security-review`
-- `performance-review`
-- `deployment`
-- `release-verification`
+Available profiles: `developer`, `architect`, `tech-lead`, `qa`, `devops`, `security`
+
+**Skill chains**: for multi-step tasks check `~/dqtri-agent-skills/skills/chains.md` for the recommended SDLC flow before selecting skills individually.
+
+**Skill dispatch**: use `~/dqtri-agent-skills/skills/index.md` for single-skill task lookup.
+
+Available skills: `spec-design`, `planning`, `architecture`, `api-design`, `feature-implementation`, `debugging`, `refactor`, `testing`, `code-review`, `security-review`, `performance-review`, `deployment`, `release-verification`
 
 Never edit shared skills unless explicitly instructed by the user.
 

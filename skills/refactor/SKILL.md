@@ -4,6 +4,9 @@ description: Perform behavior-preserving restructuring, simplification, extracti
 tokens: ~500
 tier: critical
 triggers: refactor, restructure, simplify, extract, rename, clean up, dependency cleanup, clarity
+chains:
+  before: [spec-design]
+  after: [testing, code-review]
 ---
 
 # Skill: refactor
@@ -38,6 +41,17 @@ Use for behavior-preserving restructuring, simplification, extraction, renaming,
 ## Memory update guidance
 
 Update memory only when the refactor establishes a durable project convention or architectural boundary. Do not store local cleanup notes.
+
+## Quality Gate
+
+Gates: Code, Tests, Architecture  
+- No feature change was introduced — behavior before and after is identical.
+- Names and structure match the project's existing style.
+- Duplication or complexity was actually reduced, not just moved.
+- Tests still cover the preserved behavior.
+- Dependency direction is unchanged or improved.
+
+See `core/rules/quality-gates.md` → Code, Tests, Architecture dimensions.
 
 ## Done When
 

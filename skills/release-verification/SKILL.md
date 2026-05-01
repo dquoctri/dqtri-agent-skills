@@ -4,6 +4,9 @@ description: Verify delivered behavior after implementation, review, testing, de
 tokens: ~500
 tier: optional
 triggers: verify release, smoke test, acceptance, post-deploy, post-migration, confirm behavior, sign off
+chains:
+  before: [deployment, testing]
+  after: []
 ---
 
 # Skill: release-verification
@@ -36,6 +39,16 @@ Use after implementation, review, test, deployment, or migration to confirm the 
 ## Memory update guidance
 
 Update memory for durable verification commands, recurring smoke tests, or known release checks. Do not store raw logs unless summarized as a lasting issue.
+
+## Quality Gate
+
+Gates: Deployment, Tests  
+- Every acceptance criterion maps to a concrete check — none are assumed to pass.
+- Failures are investigated before claiming success — no "probably fine".
+- Manual checks are named when automation is absent.
+- Residual risk is explicit and accepted by the team, not silently ignored.
+
+See `core/rules/quality-gates.md` → Deployment, Tests dimensions.
 
 ## Done When
 

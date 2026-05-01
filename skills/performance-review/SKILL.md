@@ -4,6 +4,9 @@ description: Investigate and review latency, throughput, memory, bundle size, re
 tokens: ~500
 tier: optional
 triggers: performance, slow, latency, throughput, memory leak, bundle size, optimize, bottleneck, N+1, cache
+chains:
+  before: []
+  after: [code-review, feature-implementation]
 ---
 
 # Skill: performance-review
@@ -36,6 +39,17 @@ Use for performance investigation, optimization planning, or review of changes t
 ## Memory update guidance
 
 Update memory for durable performance budgets, known bottlenecks, or accepted tradeoffs. Do not store bulky benchmark logs.
+
+## Quality Gate
+
+Gates: Performance, Code  
+- Optimization is tied to a measured bottleneck or declared budget — not guesswork.
+- No N+1 query or unbounded loop introduced.
+- No avoidable sequential calls that could be parallel.
+- Correctness is preserved — behavior before and after optimization is identical.
+- Before/after evidence provided: benchmark result, query plan, or load profile.
+
+See `core/rules/quality-gates.md` → Performance, Code dimensions.
 
 ## Done When
 

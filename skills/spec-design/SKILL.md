@@ -4,6 +4,9 @@ description: Turn ideas, requirements, bug reports, and product requests into sc
 tokens: ~500
 tier: critical
 triggers: spec, requirement, idea, product request, acceptance criteria, scope
+chains:
+  before: []
+  after: [planning, architecture, feature-implementation]
 ---
 
 # Skill: spec-design
@@ -36,6 +39,16 @@ Use for turning an idea, requirement, bug report, or product request into a clea
 ## Memory update guidance
 
 Update memory only for durable product decisions, accepted constraints, or lasting domain concepts. Put reusable process improvements in `skill-improvement-proposals.md`.
+
+## Quality Gate
+
+Gates: Architecture  
+- Acceptance criteria are testable and unambiguous (not vague).
+- Non-goals are explicit — they prevent scope creep in later skills.
+- Edge cases and failure states are named, not deferred.
+- The spec is small enough to implement in independent slices.
+
+See `core/rules/quality-gates.md` → Architecture dimension.
 
 ## Done When
 

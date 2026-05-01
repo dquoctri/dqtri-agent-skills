@@ -4,6 +4,9 @@ description: Make system design decisions about module boundaries, dependency di
 tokens: ~550
 tier: critical
 triggers: architecture, design, module, boundary, dependency, data flow, service, structure, migration, redesign
+chains:
+  before: [spec-design]
+  after: [api-design, planning, feature-implementation]
 ---
 
 # Skill: architecture
@@ -38,6 +41,17 @@ Use for system design, module boundaries, dependency direction, data flow, servi
 ## Memory update guidance
 
 Update memory for durable architecture decisions, accepted tradeoffs, or lasting boundaries. Do not store speculative designs that were not adopted.
+
+## Quality Gate
+
+Gates: Architecture, API (if contracts defined)  
+- Dependency direction is explicit — no circular dependencies introduced.
+- Boundaries are named and enforceable in code or workflow.
+- Tradeoffs are stated, not hidden.
+- Migration path and rollback needs are named when the change is structural.
+- Recommendation fits the project's current scale — not designed for a hypothetical future.
+
+See `core/rules/quality-gates.md` → Architecture, API dimensions.
 
 ## Done When
 

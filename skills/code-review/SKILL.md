@@ -4,6 +4,9 @@ description: Review code changes for correctness, readability, architecture fit,
 tokens: ~550
 tier: critical
 triggers: review, audit, code review, assess, check diff, before merge, correctness, readability
+chains:
+  before: [testing]
+  after: [deployment]
 ---
 
 # Skill: code-review
@@ -39,6 +42,19 @@ Use when asked to review, audit, or assess code changes before or after implemen
 ## Memory update guidance
 
 Update memory only for durable review standards or recurring project risks. Do not promote one review's context into global guidance.
+
+## Quality Gate
+
+Gates: All dimensions relevant to the diff  
+- Apply Code gate if implementation changed.
+- Apply Tests gate if test coverage changed or is missing.
+- Apply Architecture gate if module boundaries or dependency direction changed.
+- Apply API gate if a public contract changed.
+- Apply Security gate if auth, input handling, or secrets are involved.
+- Apply Performance gate if a hot path, query, or loop changed.
+- Each finding includes: file reference, severity label, risk description, suggested fix.
+
+See `core/rules/quality-gates.md` → all dimensions.
 
 ## Done When
 

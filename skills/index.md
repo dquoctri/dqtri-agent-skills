@@ -4,7 +4,32 @@ Use this table to select the 1-2 most relevant skills for a task. Match the task
 
 Read a skill's frontmatter `tokens` and `tier` before loading the full body. If the context budget is tight, skip `optional` skills.
 
-## Dispatch Table
+## Start Here: Role Profiles
+
+If you know the role for this session, load the role profile instead of selecting skills manually. The profile pre-selects skills, memory layers, and context budget.
+
+| Role | Profile file | Use when |
+|---|---|---|
+| Developer | `skills/profiles/developer.md` | Implementing features, fixing bugs, refactoring, writing tests |
+| Architect | `skills/profiles/architect.md` | System design, API contracts, module boundaries, structural planning |
+| Tech Lead | `skills/profiles/tech-lead.md` | Code review, sprint planning, engineering standards, spec shaping |
+| QA Engineer | `skills/profiles/qa.md` | Test strategy, coverage review, release verification |
+| DevOps / SRE | `skills/profiles/devops.md` | Deployments, CI/CD, environments, rollbacks, release checks |
+| Security Engineer | `skills/profiles/security.md` | Threat modeling, vulnerability review, auth design, hardening |
+
+When no role is declared, use the dispatch table below.
+
+## Multi-Skill Tasks: Check the Chain First
+
+If a task spans multiple steps or skills, check `skills/chains.md` for the recommended SDLC flow sequence before selecting skills individually.
+
+Common chains:
+- **New feature**: spec-design → planning → feature-implementation → testing → code-review
+- **Bug fix**: debugging → testing → code-review
+- **System change**: architecture → api-design → planning → feature-implementation → testing
+- **Release**: code-review → deployment → release-verification
+
+## Dispatch Table (single-skill tasks)
 
 | Task keyword or description | Primary skill | Secondary skill | Tier |
 |---|---|---|---|
@@ -34,17 +59,20 @@ Total cost for a typical task: ~150 (memory layer 0) + ~500 (one skill) = ~650 t
 
 All skills live at `~/dqtri-agent-skills/skills/<name>/SKILL.md`.
 
-Available skills:
-- `spec-design` — ~500 tokens, critical
-- `planning` — ~450 tokens, critical
-- `architecture` — ~550 tokens, critical
-- `api-design` — ~550 tokens, critical
-- `feature-implementation` — ~500 tokens, critical
-- `debugging` — ~550 tokens, critical
-- `refactor` — ~500 tokens, critical
-- `testing` — ~500 tokens, critical
-- `code-review` — ~550 tokens, critical
-- `security-review` — ~550 tokens, optional
-- `performance-review` — ~500 tokens, optional
-- `deployment` — ~550 tokens, optional
-- `release-verification` — ~500 tokens, optional
+Each skill has `tokens`, `tier`, `triggers`, and `chains` in its frontmatter — read frontmatter before loading the full body.
+
+| Skill | Tokens | Tier |
+|---|---|---|
+| `spec-design` | ~500 | critical |
+| `planning` | ~450 | critical |
+| `architecture` | ~550 | critical |
+| `api-design` | ~550 | critical |
+| `feature-implementation` | ~500 | critical |
+| `debugging` | ~550 | critical |
+| `refactor` | ~500 | critical |
+| `testing` | ~500 | critical |
+| `code-review` | ~550 | critical |
+| `security-review` | ~550 | optional |
+| `performance-review` | ~500 | optional |
+| `deployment` | ~550 | optional |
+| `release-verification` | ~500 | optional |

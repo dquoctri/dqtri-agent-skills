@@ -4,6 +4,9 @@ description: Diagnose failing tests, runtime errors, regressions, crashes, incor
 tokens: ~550
 tier: critical
 triggers: debug, fix bug, error, failing, crash, regression, incorrect output, root cause, broken
+chains:
+  before: []
+  after: [testing, code-review]
 ---
 
 # Skill: debugging
@@ -39,6 +42,17 @@ Use for failing tests, runtime errors, regressions, crashes, incorrect outputs, 
 ## Memory update guidance
 
 Update memory only for durable project knowledge, such as a recurring failure mode, non-obvious diagnostic command, or lasting environment constraint. Do not store temporary logs.
+
+## Quality Gate
+
+Gates: Code, Tests  
+- Root cause is real — not a symptom-only or mask fix.
+- Fix is the narrowest change that addresses the root cause.
+- A reproduction test was added or already exists.
+- Regression checks pass: the failing case now passes; nearby cases still pass.
+- No unrelated behavior changed.
+
+See `core/rules/quality-gates.md` → Code, Tests dimensions.
 
 ## Done When
 

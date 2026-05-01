@@ -4,6 +4,9 @@ description: Review designs or code for practical security risks across auth, au
 tokens: ~550
 tier: optional
 triggers: security, auth, authorization, vulnerability, threat, input validation, secrets, injection, OWASP
+chains:
+  before: [architecture, api-design]
+  after: [feature-implementation, code-review]
 ---
 
 # Skill: security-review
@@ -36,6 +39,18 @@ Use for security-focused design review, code review, threat analysis, or hardeni
 ## Memory update guidance
 
 Update memory only for durable security constraints or approved hardening decisions. Do not store secrets, raw vulnerable payloads, or sensitive logs.
+
+## Quality Gate
+
+Gates: Security  
+- All user-controlled input is validated before reaching a sensitive operation.
+- Auth check happens before the action — no post-action auth.
+- No secrets appear in output, logs, memory files, or response bodies.
+- Trust boundaries are explicit — what is trusted, what is untrusted.
+- Findings are severity-labeled: Critical, High, Medium, Low.
+- Recommendations do not disable or weaken existing security controls.
+
+See `core/rules/quality-gates.md` → Security dimension.
 
 ## Done When
 

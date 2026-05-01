@@ -4,6 +4,9 @@ description: Design or change APIs, command interfaces, schemas, events, and int
 tokens: ~550
 tier: critical
 triggers: api, endpoint, schema, contract, interface, event, integration, versioning, backward compatibility
+chains:
+  before: [spec-design, architecture]
+  after: [feature-implementation, testing]
 ---
 
 # Skill: api-design
@@ -36,6 +39,17 @@ Use for designing or changing APIs, command interfaces, schemas, events, or inte
 ## Memory update guidance
 
 Update memory for durable API conventions, compatibility decisions, or integration constraints. Do not store one-off payload dumps.
+
+## Quality Gate
+
+Gates: API, Security  
+- Contract is backward-compatible, or breaking change has a migration plan and version.
+- Error behavior is explicit and consistent — status codes, messages, error shape.
+- Auth boundary is clear: who can call this, under what conditions, what is denied.
+- Validation covers invalid input, missing required fields, and boundary values.
+- Existing consumer tests still pass, or consumers are notified of the change.
+
+See `core/rules/quality-gates.md` → API, Security dimensions.
 
 ## Done When
 

@@ -4,6 +4,9 @@ description: Add, repair, design, or review tests and coverage for behavior chan
 tokens: ~500
 tier: critical
 triggers: test, coverage, unit test, integration test, e2e, verify, assertion, fixture, regression test
+chains:
+  before: [feature-implementation, debugging, refactor]
+  after: [code-review, release-verification]
 ---
 
 # Skill: testing
@@ -38,6 +41,17 @@ Use for adding tests, repairing tests, improving coverage, or designing a focuse
 ## Memory update guidance
 
 Update memory only for durable test commands, fixture conventions, or known testing constraints. Do not store transient failures or raw test output.
+
+## Quality Gate
+
+Gates: Tests  
+- Tests assert externally visible behavior, not implementation details.
+- Tests are deterministic and isolated — no shared mutable state between cases.
+- Test doubles match the risk: real implementation preferred, mocks only for external I/O.
+- Failure messages name the expected behavior, not just "expected X got Y".
+- No skipped or commented-out tests without a dated explanation.
+
+See `core/rules/quality-gates.md` → Tests dimension.
 
 ## Done When
 
