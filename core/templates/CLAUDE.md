@@ -74,13 +74,16 @@ Update `./ai-memory/` only when information is durable and likely to help future
 
 1. Read this project `CLAUDE.md`.
 2. Read relevant shared rules from `~/dqtri-agent-skills/core/rules/`.
-3. Read project memory from `./ai-memory/` when it exists.
-4. Read `./ai-memory/project-config.md` when it exists.
-5. Select at most 1-2 relevant skills from `~/dqtri-agent-skills/skills/`.
-6. Define success criteria and plan the next coherent step with input, action, output, verification, and stop point.
-7. Execute one bounded step.
-8. Review the diff and run relevant verification commands.
-9. Update `./ai-memory/` only when the new information is durable.
+3. Load memory layer 0: `./ai-memory/summary.md` and `./ai-memory/project-config.md` (~150 tokens).
+4. For complex tasks, load memory layer 1: `decisions.md`, `patterns.md`, `mistakes.md` (~400 tokens).
+5. Check `./ai-memory/current-task.md` — if non-empty, resume from the recorded step.
+6. Select at most 1-2 relevant skills using `~/dqtri-agent-skills/skills/index.md`.
+7. Define success criteria and plan the next coherent step with input, action, output, verification, and stop point.
+8. Execute one bounded step. Update `current-task.md` with the current step progress.
+9. Review the diff and run relevant verification commands.
+10. Update `./ai-memory/` only when the new information is durable (use write triggers in `memory.md`).
+11. Append a session close entry to `./ai-memory/project-experience-log.md`.
+12. Clear `./ai-memory/current-task.md` on task completion.
 
 ## Verification And Commit Rules
 

@@ -1,6 +1,9 @@
 ---
 name: architecture
 description: Make system design decisions about module boundaries, dependency direction, data flow, service boundaries, migrations, and large structural changes.
+tokens: ~550
+tier: critical
+triggers: architecture, design, module, boundary, dependency, data flow, service, structure, migration, redesign
 ---
 
 # Skill: architecture

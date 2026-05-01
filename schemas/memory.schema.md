@@ -10,11 +10,12 @@ ai-memory/
 
 - `facts.md`: durable facts about stack, commands, architecture, and conventions.
 - `decisions.md`: durable technical decisions with reason and consequences.
-- `patterns.md`: recurring implementation patterns.
-- `mistakes.md`: durable mistakes to avoid repeating.
+- `patterns.md`: recurring implementation patterns (write after second occurrence).
+- `mistakes.md`: durable mistakes to avoid repeating (write after backtrack or non-obvious failure).
 - `project-config.md`: verification commands, important paths, protected paths, and commit rule.
-- `project-experience-log.md`: raw observations from real agent work.
+- `project-experience-log.md`: raw session close micro-entries (one per task, mandatory).
 - `skill-improvement-proposals.md`: reviewed candidate improvements before shared skill updates.
+- `current-task.md`: scratch file for current in-progress task state; cleared on completion.
 
 ## Optional Compatibility Files
 

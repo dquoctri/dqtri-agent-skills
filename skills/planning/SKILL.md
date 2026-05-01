@@ -1,6 +1,9 @@
 ---
 name: planning
 description: Break specs, bugs, migrations, and multi-file changes into thin, ordered, verifiable implementation steps.
+tokens: ~450
+tier: critical
+triggers: plan, steps, sequence, multi-step, break down, order, slice
 ---
 
 # Skill: planning

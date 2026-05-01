@@ -1,6 +1,9 @@
 ---
 name: performance-review
 description: Investigate and review latency, throughput, memory, bundle size, rendering, query performance, and other measurable bottlenecks.
+tokens: ~500
+tier: optional
+triggers: performance, slow, latency, throughput, memory leak, bundle size, optimize, bottleneck, N+1, cache
 ---
 
 # Skill: performance-review

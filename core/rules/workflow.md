@@ -5,14 +5,48 @@ Use the dqtri-agent-skills execution loop for software development lifecycle tas
 ## Execution Loop
 
 1. Read the project `AGENTS.md`.
-2. Read relevant shared rules from `~/dqtri-agent-skills/core/rules/`.
-3. Read project memory if the project has it or points to it.
-4. Read `./ai-memory/project-config.md` when it exists.
-5. Select 1-2 relevant skills from `~/dqtri-agent-skills/skills/`.
-6. Define success criteria and plan the next coherent change.
-7. Implement one bounded step.
-8. Review the diff and run relevant verification.
-9. Update memory only if useful and allowed.
+2. Load shared rules relevant to the task (not all rules).
+3. Load memory layer 0: `summary.md` and `project-config.md` if present (~150 tokens).
+4. For complex or multi-step tasks, load memory layer 1: `decisions.md`, `patterns.md`, `mistakes.md`.
+5. Check `ai-memory/current-task.md` — if it exists and is non-empty, resume from where it left off.
+6. Select 1-2 relevant skills from `~/dqtri-agent-skills/skills/` using the dispatch table in `skills/index.md`.
+7. Define success criteria and plan the next coherent change.
+8. Implement one bounded step.
+9. Review the diff and run relevant verification.
+10. Update memory only if useful and allowed (see `core/rules/memory.md` write triggers).
+11. Append session close entry to `project-experience-log.md`.
+12. Clear `ai-memory/current-task.md` on successful task completion.
+
+## Current Task Continuity
+
+- Before starting a multi-step task, write the plan to `ai-memory/current-task.md`.
+- Update the current step number after each step completes.
+- If a session ends mid-task, the next session reads `current-task.md` to resume.
+- Clear `current-task.md` by emptying it when the task is done (do not delete the file).
+
+Format:
+```
+# Current Task (clear when done)
+Goal: <one line>
+Skill: <skill-name>
+Steps: <total>
+Step reached: <N>/<total>
+Blocked on: <reason or "none">
+Resume with: <next action>
+```
+
+## Progressive Memory Loading
+
+Load only what the task requires. Loading everything wastes tokens and increases cost.
+
+| Layer | Files | Load when | Est. tokens |
+|---|---|---|---|
+| 0 | `summary.md`, `project-config.md` | Always | ~150 |
+| 1 | `decisions.md`, `patterns.md`, `mistakes.md` | Complex or unfamiliar tasks | ~400 |
+| 2 | `project-experience-log.md` | Debugging recurring failures | ~800+ |
+| 3 | `skill-improvement-proposals.md` | System improvement only | skip normally |
+
+Do not load layer 2 or layer 3 on normal tasks.
 
 ## Rule Loading
 
@@ -24,8 +58,8 @@ Use the dqtri-agent-skills execution loop for software development lifecycle tas
 ## Skill Selection
 
 - Select no more than 1-2 skills for a normal task.
-- Choose skills by task type, not by habit.
-- Read the selected skill file before applying it.
+- Choose skills by task type using `skills/index.md` as the dispatch table.
+- Read the selected skill's token tier header before loading the full skill body.
 - If no skill fits, proceed with the shared rules only.
 
 ## Lifecycle Skill Map
@@ -77,5 +111,6 @@ Use the dqtri-agent-skills execution loop for software development lifecycle tas
 - Update memory only when the result is durable project knowledge.
 - Do not write temporary notes, debugging traces, or chat history into memory.
 - Do not update shared skills or rules during normal project work.
-- Record raw task observations in `project-experience-log.md` only when they are useful.
+- Use the write triggers in `core/rules/memory.md` to decide which file to update.
+- Always append a session close micro-entry to `project-experience-log.md` at task end.
 - Record reusable process ideas in `skill-improvement-proposals.md`; do not promote them automatically.

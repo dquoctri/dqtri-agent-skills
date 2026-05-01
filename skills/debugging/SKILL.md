@@ -1,6 +1,9 @@
 ---
 name: debugging
 description: Diagnose failing tests, runtime errors, regressions, crashes, incorrect outputs, and unclear bug reports by finding and fixing root causes.
+tokens: ~550
+tier: critical
+triggers: debug, fix bug, error, failing, crash, regression, incorrect output, root cause, broken
 ---
 
 # Skill: debugging

@@ -1,6 +1,9 @@
 ---
 name: api-design
 description: Design or change APIs, command interfaces, schemas, events, and integration contracts with compatibility, validation, auth, errors, and tests in mind.
+tokens: ~550
+tier: critical
+triggers: api, endpoint, schema, contract, interface, event, integration, versioning, backward compatibility
 ---
 
 # Skill: api-design

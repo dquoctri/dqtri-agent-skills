@@ -1,6 +1,9 @@
 ---
 name: testing
 description: Add, repair, design, or review tests and coverage for behavior changes, bug fixes, edge cases, and verification strategy.
+tokens: ~500
+tier: critical
+triggers: test, coverage, unit test, integration test, e2e, verify, assertion, fixture, regression test
 ---
 
 # Skill: testing

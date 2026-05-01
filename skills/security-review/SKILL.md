@@ -1,6 +1,9 @@
 ---
 name: security-review
 description: Review designs or code for practical security risks across auth, authorization, input handling, secrets, logs, dependencies, and integrations.
+tokens: ~550
+tier: optional
+triggers: security, auth, authorization, vulnerability, threat, input validation, secrets, injection, OWASP
 ---
 
 # Skill: security-review

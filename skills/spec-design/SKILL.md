@@ -1,6 +1,9 @@
 ---
 name: spec-design
 description: Turn ideas, requirements, bug reports, and product requests into scoped implementation-ready specs with acceptance criteria and non-goals.
+tokens: ~500
+tier: critical
+triggers: spec, requirement, idea, product request, acceptance criteria, scope
 ---
 
 # Skill: spec-design

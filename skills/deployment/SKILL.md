@@ -1,6 +1,9 @@
 ---
 name: deployment
 description: Prepare releases, deployments, migrations, environment changes, rollback plans, and CI/CD workflow changes without hidden automation.
+tokens: ~550
+tier: optional
+triggers: deploy, release, rollout, CI/CD, environment, migration, rollback, publish, ship
 ---
 
 # Skill: deployment

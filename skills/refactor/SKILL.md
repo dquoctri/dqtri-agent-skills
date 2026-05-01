@@ -1,6 +1,9 @@
 ---
 name: refactor
 description: Perform behavior-preserving restructuring, simplification, extraction, renaming, dependency cleanup, and code clarity improvements.
+tokens: ~500
+tier: critical
+triggers: refactor, restructure, simplify, extract, rename, clean up, dependency cleanup, clarity
 ---
 
 # Skill: refactor

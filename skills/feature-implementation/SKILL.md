@@ -1,6 +1,9 @@
 ---
 name: feature-implementation
 description: Implement new behavior, user workflows, UI changes, API endpoints, commands, and integrations in small verified slices.
+tokens: ~500
+tier: critical
+triggers: implement, add feature, build, create, new behavior, workflow, UI, endpoint, command, integration
 ---
 
 # Skill: feature-implementation

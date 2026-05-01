@@ -1,6 +1,9 @@
 ---
 name: release-verification
 description: Verify delivered behavior after implementation, review, testing, deployment, or migration using acceptance criteria and smoke checks.
+tokens: ~500
+tier: optional
+triggers: verify release, smoke test, acceptance, post-deploy, post-migration, confirm behavior, sign off
 ---
 
 # Skill: release-verification

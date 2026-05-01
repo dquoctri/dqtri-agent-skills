@@ -1,6 +1,9 @@
 ---
 name: code-review
 description: Review code changes for correctness, readability, architecture fit, security, performance, missing tests, and behavioral regressions.
+tokens: ~550
+tier: critical
+triggers: review, audit, code review, assess, check diff, before merge, correctness, readability
 ---
 
 # Skill: code-review
