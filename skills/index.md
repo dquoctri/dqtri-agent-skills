@@ -28,6 +28,7 @@ Common chains:
 - **Bug fix**: debugging → testing → code-review
 - **System change**: architecture → api-design → planning → feature-implementation → testing
 - **Release**: code-review → deployment → release-verification
+- **UI build**: spec-design → frontend-scaffold → design-token-system → ui-component-library → feature-implementation → code-review
 
 ## Dispatch Table (single-skill tasks)
 
@@ -37,6 +38,9 @@ Common chains:
 | plan, break down, multi-step, sequence, slice | `planning` | `spec-design` | critical |
 | architecture, module boundary, dependency, data flow, service | `architecture` | `planning` | critical |
 | api, endpoint, schema, contract, interface, event, versioning | `api-design` | `feature-implementation` | critical |
+| scaffold, vite, react setup, new frontend project, init frontend | `frontend-scaffold` | `design-token-system` | critical |
+| token, theme, design system, color palette, dark mode, theming | `design-token-system` | `frontend-scaffold` | critical |
+| component library, react components, primitives, admin UI, dashboard UI | `ui-component-library` | `design-token-system` | critical |
 | implement, add feature, build, create, new behavior, workflow | `feature-implementation` | `testing` | critical |
 | refactor, restructure, simplify, extract, rename, clean up | `refactor` | `testing` | critical |
 | debug, fix bug, error, failing, crash, regression, broken | `debugging` | `testing` | critical |
@@ -67,6 +71,9 @@ Each skill has `tokens`, `tier`, `triggers`, and `chains` in its frontmatter —
 | `planning` | ~450 | critical |
 | `architecture` | ~550 | critical |
 | `api-design` | ~550 | critical |
+| `frontend-scaffold` | ~450 | critical |
+| `design-token-system` | ~450 | critical |
+| `ui-component-library` | ~550 | critical |
 | `feature-implementation` | ~500 | critical |
 | `debugging` | ~550 | critical |
 | `refactor` | ~500 | critical |

@@ -137,6 +137,25 @@ spec-design → planning → feature-implementation → testing → deployment �
 
 ---
 
+## Chain: UI Build
+
+> Use when building a React/Vite/TS UI from a design spec (HTML prototype, Figma, screenshots).
+
+```
+spec-design → frontend-scaffold → design-token-system → ui-component-library → feature-implementation → code-review
+```
+
+| Step | Skill | Success signal |
+|---|---|---|
+| 1 | spec-design | Component inventory complete, page list and token dimensions defined |
+| 2 | frontend-scaffold | Project runs, folder structure, router, context, and mock data in place |
+| 3 | design-token-system | `buildTheme()`, `RADII`, and `useTheme()` complete; `tsc --noEmit` clean |
+| 4 | ui-component-library | All layers (primitives → charts → layout → pages) built and type-check clean |
+| 5 | feature-implementation | Individual page features, interactions, and edge cases implemented |
+| 6 | code-review | No hardcoded tokens, no type errors, no layout regressions |
+
+---
+
 ## Quick Reference
 
 | Task type | Chain |
@@ -148,3 +167,4 @@ spec-design → planning → feature-implementation → testing → deployment �
 | Release | code-review → deployment → release-verification |
 | Security hardening | security-review → feature-implementation → testing → code-review |
 | Migration | spec-design → planning → feature-implementation → testing → deployment → release-verification |
+| UI build | spec-design → frontend-scaffold → design-token-system → ui-component-library → feature-implementation → code-review |

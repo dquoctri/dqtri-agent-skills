@@ -53,6 +53,16 @@ Gates: Code, Tests, API (if public contract changed), Security (if auth/input bo
 
 See `core/rules/quality-gates.md` → Code, Tests, API, Security dimensions.
 
+## Frontend notes (React/Vite/TS projects)
+
+When `feature-implementation` applies to a React UI, apply these additional constraints:
+
+- **Data before pages** — ensure `data/index.ts` matches the full shape that page components need before writing any page. Schema drift between data and pages is a common source of cascading type errors.
+- **Build order** — within a page or feature: write/update primitives first, then composites, then the page. Never write top-down.
+- **Token consumption** — destructure both `t` (colors) and `r` (radii) from `useTheme()`. Hardcoded hex values or pixel radii in component files are defects.
+- **Batch type-check** — run `tsc --noEmit` after completing each logical group of files (e.g., after all new primitives, after the page). Fix errors before adding the next group.
+- **Defer `npm run dev`** — don't start the dev server until all new imports resolve. Unresolved module errors pollute the output and slow diagnosis.
+
 ## Done When
 
 - The smallest safe behavior change was made.
